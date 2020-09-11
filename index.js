@@ -234,12 +234,16 @@ console.log(getArtistByIndex(artists, 2))
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(array){
-  if(array.years < 1900){
-
+function get20s(birth, death){
+  let arr = []
+  for (let i = 0; i < artists.years; i++){
+    if (artists[i].years.split >= birth && artists[i].years.split <= death) {
+      arr.push(artists[i].name)
+    }
   }
+  return arr
 }
-console.log(get20s(artists))
+console.log(get20s(1901, 1959))
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -255,8 +259,7 @@ function removeArtist(array, index) {
   array.splice(array.indexOf(index), index)
   return array
   }
-console.log(removeArtist(artists, 3))
- 
+console.log(removeArtist(artists, 1))
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -300,9 +303,9 @@ function lotsOfArt(array){
         bigPaint.push(array[i].name);
     }
   }
-  console.log(bigPaint)
+  return bigPaint
 } 
-lotsOfArt(artists)
+console.log(lotsOfArt(artists))
 
 // 🎨🎨 STRETCH 🎨🎨//
 
